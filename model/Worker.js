@@ -8,6 +8,16 @@ const selectWorker = (request,response) => {
   })  
 };
 
+const selectWorkerById = (request,response) => {
+  const id  = request.params.id;
+  pool.query(`SELECT * FROM Funcionario where id =  ${id}`,(error,results) => {
+    if(error){
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  })
+};
+
 const insertWorker = (request,response) => {
   const login = request.body.login;
   const senha = request.body.senha;
@@ -23,7 +33,7 @@ const insertWorker = (request,response) => {
 };
 
 const deleteWorker = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
 
   pool.query(`DELETE FROM Funcionario where id = ${id}`,(error,results) => {
     if(error) throw error;
@@ -45,6 +55,7 @@ const updateWorker = (request,response) => {
 
 module.exports = {
   selectWorker,
+  selectWorkerById,
   insertWorker,
   deleteWorker,
   updateWorker,

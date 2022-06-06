@@ -8,6 +8,17 @@ const selectField = (request,response) => {
   })  
 };
 
+
+const selectFieldById = (request,response) => {
+  const id  = request.params.id;
+  pool.query(`SELECT * FROM Quadra where id =  ${id}`,(error,results) => {
+    if(error){
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  })
+};
+
 const insertField = (request,response) => {
   const idBloco = request.body.nome;
   const modalidade = request.body.modalidade;
@@ -21,7 +32,7 @@ const insertField = (request,response) => {
 };
 
 const deleteField = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
 
   pool.query(`DELETE FROM Quadra where id = ${id}`,(error,results) => {
     if(error) throw error;
@@ -40,6 +51,7 @@ const updateField = (request,response) => {
 
 module.exports = {
   selectField,
+  selectFieldById,
   insertField,
   deleteField,
   updateField

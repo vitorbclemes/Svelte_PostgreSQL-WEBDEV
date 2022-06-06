@@ -8,6 +8,16 @@ const selectAppointment = (request,response) => {
   })  
 };
 
+const selectAppointmentById = (request,response) => {
+  const id  = request.params.id;
+  pool.query(`SELECT * FROM Agendamentos where id =  ${id}`,(error,results) => {
+    if(error){
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  })
+};
+
 const insertAppointment = (request,response) => {
   const idEvento =  request.body.idEvento || null;
   const idCliente = request.body.idCliente;
@@ -28,7 +38,7 @@ const insertAppointment = (request,response) => {
 };
 
 const deleteAppointment = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
 
   pool.query(`DELETE FROM Agendamento where id = ${id}`,(error,results) => {
     if(error) throw error;
@@ -58,6 +68,7 @@ const updateAppointment = (request,response) => {
 
 module.exports = {
   selectAppointment,
+  selectAppointmentById,
   insertAppointment,
   deleteAppointment,
   updateAppointment

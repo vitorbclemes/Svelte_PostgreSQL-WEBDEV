@@ -2,10 +2,20 @@ const {pool} = require('../config/database');
 
 const selectClient = (request,response) => {
   pool.query('SELECT * FROM Cliente;',(error, results) => {
-    if(error) 
+    if(error)
       throw error;
     response.status(200).json(results.rows);
   })  
+};
+
+const selectClientById = (request,response) => {
+  const id  = request.params.id;
+  pool.query(`SELECT * FROM Cliente where id =  ${id}`,(error,results) => {
+    if(error){
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  })
 };
 
 const insertClient = (request,response) => {
@@ -25,7 +35,7 @@ const insertClient = (request,response) => {
 };
 
 const deleteClient = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
 
   pool.query(`DELETE FROM Cliente where id = ${id}`,(error,results) => {
     if(error) throw error;
@@ -49,6 +59,7 @@ const updateClient = (request,response) => {
 
 module.exports = {
   selectClient,
+  selectClientById,
   insertClient,
   deleteClient,
   updateClient

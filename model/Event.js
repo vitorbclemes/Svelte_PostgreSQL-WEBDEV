@@ -8,6 +8,17 @@ const selectEvent = (request,response) => {
   })  
 };
 
+
+const selectEventById = (request,response) => {
+  const id  = request.params.id;
+  pool.query(`SELECT * FROM Evento where id =  ${id}`,(error,results) => {
+    if(error){
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  })
+};
+
 const insertEvent = (request,response) => {
   const nome = request.body.nome;
 
@@ -20,7 +31,7 @@ const insertEvent = (request,response) => {
 };
 
 const deleteEvent = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
 
   pool.query(`DELETE FROM Evento where id = ${id}`,(error,results) => {
     if(error) throw error;
@@ -39,6 +50,7 @@ const updateEvent = (request,response) => {
 
 module.exports = {
   selectEvent,
+  selectEventById,
   insertEvent,
   deleteEvent,
   updateEvent
