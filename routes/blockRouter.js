@@ -7,6 +7,6 @@ router.get('/selectBlock',blockModel.selectBlock);
 router.get('/selectBlockById/:id',blockModel.selectBlockById);
 router.post('/insertBlock',blockModel.insertBlock);
 router.delete('/deleteBlock/:id',blockModel.deleteBlock);
-router.put('/updateBlock',blockModel.updateBlock);
+router.put('/updateBlock/:id',blockModel.updateBlock);
 
 module.exports = router;

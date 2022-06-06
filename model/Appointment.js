@@ -47,7 +47,7 @@ const deleteAppointment = (request,response) => {
 }
 
 const updateAppointment = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
   const idEvento =  request.body.idEvento || null;
   const idCliente = request.body.idCliente;
   const idQuadra = request.body.idQuadra;

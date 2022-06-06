@@ -7,6 +7,6 @@ router.get('/selectField',fieldModel.selectField);
 router.get('/selectFieldById/:id',fieldModel.selectFieldById);
 router.post('/insertField',fieldModel.insertField);
 router.delete('/deleteField/:id',fieldModel.deleteField);
-router.put('/updateField',fieldModel.updateField);
+router.put('/updateField/:id',fieldModel.updateField);
 
 module.exports = router;

@@ -44,7 +44,7 @@ const deleteClient = (request,response) => {
 }
 
 const updateClient = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
   const cpf = request.body.cpf;
   const senha = request.body.senha;
   const nome = request.body.nome;

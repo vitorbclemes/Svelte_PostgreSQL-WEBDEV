@@ -7,6 +7,6 @@ router.get('/selectWorker',workerModel.selectWorker);
 router.get('/selectWorkerById/:id',workerModel.selectWorkerById);
 router.post('/insertWorker',workerModel.insertWorker);
 router.delete('/deleteWorker/:id',workerModel.deleteWorker);
-router.put('/updateWorker',workerModel.updateWorker);
+router.put('/updateWorker/:id',workerModel.updateWorker);
 
 module.exports = router;

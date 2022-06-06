@@ -41,7 +41,7 @@ const deleteField = (request,response) => {
 }
 
 const updateField = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
   const modalidade = request.body.modalidade;
   pool.query(`UPDATE Quadra SET modalidade='${modalidade}' WHERE id = ${id}`,(error,results) => {
     if(error) throw error

@@ -40,7 +40,7 @@ const deleteEvent = (request,response) => {
 }
 
 const updateEvent = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
   const nome = request.body.nome;
   pool.query(`UPDATE Evento SET nome='${nome}' WHERE id = ${id}`,(error,results) => {
     if(error) throw error

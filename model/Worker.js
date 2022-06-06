@@ -42,7 +42,7 @@ const deleteWorker = (request,response) => {
 }
 
 const updateWorker = (request,response) => {
-  const id = parseInt(request.body.id);
+  const id = parseInt(request.params.id);
   const login = request.body.cpf;
   const senha = request.body.senha;
   const nome = request.body.nome;
