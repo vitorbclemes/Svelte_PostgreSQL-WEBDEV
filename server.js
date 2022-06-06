@@ -1,19 +1,13 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const path = require('path');
+
 const app = express();
 const PORT = process.env.PORT || 27017;
 
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended:true
-  })
-);
-
-app.get('/',(req,res)=> {
-  res.status(200).send({
-    info: 'Acesse aos endpoints'
-  })
+// Integrate with FrontEnd
+app.use(express.static('public'));
+app.get('*',(req,res)=> {
+  return res.sendFile(path.resolve(__dirname,'public','index.html'));
 });
 
 // Routers
