@@ -1,4 +1,5 @@
-const Pool = require('pg');
+// Postgres connection
+const Pool = require('pg').Pool;
 const pool = new Pool({
   user: process.env.USER,
   host: process.env.HOST,
