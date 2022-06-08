@@ -1,16 +1,16 @@
-const {pool} = require('../config/database');
+import pool from "../config/database.js";
 
 const selectClient = (request,response) => {
   pool.query('SELECT * FROM Cliente;',(error, results) => {
     if(error)
       throw error;
     response.status(200).json(results.rows);
-  })  
+  });
 };
 
 const selectClientById = (request,response) => {
   const id  = request.params.id;
-  pool.query(`SELECT * FROM Cliente where id =  ${id}`,(error,results) => {
+  pool.query(`SELECT * FROM Cliente where id =  $1`,[id],(error,results) => {
     if(error){
       throw error;
     }
@@ -26,7 +26,7 @@ const insertClient = (request,response) => {
   const ocupacao = request.body.ocupacao;
   const endereco = request.body.endereco
   
-  pool.query(`INSERT INTO Cliente values(default,'${cpf}','${senha}','${nome}',${idade},'${ocupacao}','${endereco}')`,(error,results) => {
+  pool.query(`INSERT INTO Cliente values(default,'$1','$2','$3',$4,'$5','$6')`,[cpf,senha,nome,idade,ocupacao,endereco],(error,results) => {
     if(error){
       throw error;
     }
@@ -37,7 +37,7 @@ const insertClient = (request,response) => {
 const deleteClient = (request,response) => {
   const id = parseInt(request.params.id);
 
-  pool.query(`DELETE FROM Cliente where id = ${id}`,(error,results) => {
+  pool.query(`DELETE FROM Cliente where id = $1`,[id],(error,results) => {
     if(error) throw error;
     response.status(201).send('Cliente removido com sucesso');
   })
@@ -51,13 +51,13 @@ const updateClient = (request,response) => {
   const idade = parseInt(request.body.idade);
   const ocupacao = request.body.ocupacao;
   const endereco = request.body.endereco
-  pool.query(`UPDATE Cliente SET cpf = '${cpf}',nome='${nome}',senha='${senha}',idade=${idade},ocupacao='${ocupacao}',endereco='${endereco}' WHERE id = ${id}`,(error,results) => {
+  pool.query(`UPDATE Cliente SET cpf = '$1',nome='$2',senha='$3',idade=$4,ocupacao='$5',endereco='$6' WHERE id = $7}`,[cpf,senha,nome,idade,ocupacao,endereco,id],(error,results) => {
     if(error) throw error
     response.status(201).send('Cliente atualizado com sucesso');
   })
 };
 
-module.exports = {
+export default {
   selectClient,
   selectClientById,
   insertClient,

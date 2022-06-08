@@ -1,4 +1,4 @@
-const {pool} = require('../config/database');
+import pool from "../config/database.js";
 
 const selectEvent = (request,response) => {
   pool.query('SELECT * FROM Evento;',(error, results) => {
@@ -48,7 +48,7 @@ const updateEvent = (request,response) => {
   })
 };
 
-module.exports = {
+export default {
   selectEvent,
   selectEventById,
   insertEvent,

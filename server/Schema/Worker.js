@@ -1,4 +1,4 @@
-const {pool} = require('../config/database');
+import pool from "../config/database.js";
 
 const selectWorker = (request,response) => {
   pool.query('SELECT * FROM Funcionario;',(error, results) => {
@@ -10,7 +10,7 @@ const selectWorker = (request,response) => {
 
 const selectWorkerById = (request,response) => {
   const id  = request.params.id;
-  pool.query(`SELECT * FROM Funcionario where id =  ${id}`,(error,results) => {
+  pool.query(`SELECT * FROM Funcionario where id =  $1`,[id],(error,results) => {
     if(error){
       throw error;
     }
@@ -24,7 +24,7 @@ const insertWorker = (request,response) => {
   const nome = request.body.nome;
   const cargo = request.body.cargo;
   
-  pool.query(`INSERT INTO Funcionario values(default,'${login}','${senha}','${nome}','${cargo}}')`,(error,results) => {
+  pool.query(`INSERT INTO Funcionario values(default,'$1,'$2','$3','$4')`,[login,senha,nome,cargo],(error,results) => {
     if(error){
       throw error;
     }
@@ -35,7 +35,7 @@ const insertWorker = (request,response) => {
 const deleteWorker = (request,response) => {
   const id = parseInt(request.params.id);
 
-  pool.query(`DELETE FROM Funcionario where id = ${id}`,(error,results) => {
+  pool.query(`DELETE FROM Funcionario where id = $1`,[id],(error,results) => {
     if(error) throw error;
     response.status(201).send('Funcionario removido com sucesso');
   })
@@ -47,13 +47,13 @@ const updateWorker = (request,response) => {
   const senha = request.body.senha;
   const nome = request.body.nome;
   const cargo = request.body.cargo;
-  pool.query(`UPDATE Funcionario SET login = '${login}',nome='${nome}',senha='${senha}',cargo='${cargo}' WHERE id = ${id}`,(error,results) => {
+  pool.query(`UPDATE Funcionario SET login = '$1',nome='$2',senha='$3',cargo='4' WHERE id = $5`,[login,senha,nome,cargo,id],(error,results) => {
     if(error) throw error
     response.status(201).send('Funcionario atualizado com sucesso');
   })
 };
 
-module.exports = {
+export default {
   selectWorker,
   selectWorkerById,
   insertWorker,
