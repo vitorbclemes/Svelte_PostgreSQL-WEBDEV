@@ -1,17 +1,16 @@
 import pool from "../config/database.js";
 
 const selectEvent = (request,response) => {
-  pool.query('SELECT * FROM Evento;',(error, results) => {
-    if(error) 
+  pool.query('SELECT e.nome,a.data FROM Evento e JOIN Agendamento a ON a.idEvento = e.id',(error, results) => {
+    if(error)
       throw error;
     response.status(200).json(results.rows);
-  })  
+  })
 };
 
-
-const selectEventById = (request,response) => {
-  const id  = request.params.id;
-  pool.query(`SELECT * FROM Evento where id =  ${id}`,(error,results) => {
+const selectClientEvent = (request,response) => {
+  const idCliente  = request.params.idCliente;
+  pool.query(`SELECT id,nome FROM Evento where idCliente=$1`,[idCliente],(error,results) => {
     if(error){
       throw error;
     }
@@ -21,21 +20,20 @@ const selectEventById = (request,response) => {
 
 const insertEvent = (request,response) => {
   const nome = request.body.nome;
-
-  pool.query(`INSERT INTO Evento values(default,'${nome}')`,(error,results) => {
+  const idCliente = request.body.idCliente;
+  pool.query(`INSERT INTO Evento values(default,$1,$2)`,[idCliente,nome],(error,results) => {
     if(error){
       throw error;
     }
-    response.status(201).send('Bloco inserido com sucesso.')
+    response.status(201).send({'answer':'Success'})
   })
 };
 
 const deleteEvent = (request,response) => {
   const id = parseInt(request.params.id);
-
   pool.query(`DELETE FROM Evento where id = ${id}`,(error,results) => {
     if(error) throw error;
-    response.status(201).send('Evento removido com sucesso');
+    response.status(201).send({'answer':'Success'});
   })
 }
 
@@ -50,7 +48,7 @@ const updateEvent = (request,response) => {
 
 export default {
   selectEvent,
-  selectEventById,
+  selectClientEvent,
   insertEvent,
   deleteEvent,
   updateEvent

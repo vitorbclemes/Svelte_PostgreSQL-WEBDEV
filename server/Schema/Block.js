@@ -1,11 +1,11 @@
 import pool from "../config/database.js";
 
 const selectBlock = (request,response) => {
-  pool.query('SELECT * FROM Bloco;',(error, results) => {
+  pool.query('SELECT * FROM Bloco',(error, results) => {
     if(error) 
       throw error;
     response.status(200).json(results.rows);
-  })  
+  })
 };
 
 const selectBlockById = (request,response) => {
