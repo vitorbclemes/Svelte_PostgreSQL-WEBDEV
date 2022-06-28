@@ -15,11 +15,11 @@ app.use(express.json());
 
 // Endpoints
 app.use('/clients',clientRouter);
+app.use('/appointments',appointmentRouter);
 app.use('/workers',workerRouter);
 app.use('/blocks',blockRouter);
 app.use('/fields',fieldRouter);
 app.use('/events',eventRouter);
-app.use('/appointments',appointmentRouter);
 
 // Integrate with FrontEnd
 app.use(express.static('public'));

@@ -2,14 +2,28 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 body {
-	color: #333;
 	margin: 0;
-	padding: 8px;
+	/* padding: 8px; */
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	color: #7D7987;
+	--main-color: #48AEF0;
+}
+
+h2{
+	display: block;
+	font-size: 1.5em;
+	margin-block-start: 0.83em;
+	margin-block-end: 0.83em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-size: 32px;
+	font-weight: 700;
+	color: #000000;
 }
 
 a {
@@ -60,4 +74,179 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
+}
+
+.fullw {
+	width: 100%;
+	overflow-x:auto ;
+}
+
+.fullh {
+	height: 100%;
+	overflow-y: auto;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-column{
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-expand {
+	display: flex;
+	flex-grow: 1;
+}
+.flex-container{
+	display: flex;
+	align-items: center;
+}
+.space-between{
+	justify-content: space-between;
+}
+.title-center {
+	background-position: center bottom !important;
+}
+
+.flex-center{
+	text-align: center;
+}
+
+.center{
+	text-align: center;
+}
+
+/* Formatted Input Field */
+.finput {
+	display: block;
+	margin: 5px;
+}
+.finput > h1 {
+	display: block;
+	margin: 0;
+	line-height: normal;
+	font-size: 10px;
+	color: #747D88;
+}
+.finput input,
+.finput select,
+.finput textarea,
+.finput .finput-like {
+	background:#fff;
+	padding: 5px 10px;
+	border: 1px solid #CBCFD4;
+	border-left: 4px solid var(--main-color);
+	border-radius: 3px;
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 30px;
+	min-height: 40px;
+}
+.finput input[type=color] {
+	padding: 2px;
+}
+.finput input:focus,
+.finput select:focus,
+.finput textarea:focus,
+.finput .finput-like:focus {
+	outline: none;
+	border-top-color: #747D88;
+	border-right-color: #747D88;
+	border-bottom-color: #747D88;
+}
+.finput input:disabled,
+.finput select:disabled,
+.finput textarea:disabled {
+	background:#FAFAFA;
+}
+.finput input.invalid:invalid,
+.finput select.invalid:invalid,
+.finput textarea.invalid:invalid {
+	color:#CF6F8A;
+	border-left: 4px solid #CF6F8A;
+}
+
+.fullscreen-faded {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-container {
+	background: #fff;
+	border-radius: 15px;
+}
+
+.dialog-section {
+	margin: 20px 0;
+	padding: 0 20px;
+	min-height: 24px;
+	line-height: 24px;
+}
+.custom-button {
+    background:var(--main-color);
+    border-radius: 55px;
+    font-weight: 800;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 36px;
+    border: none;
+    margin-bottom: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hr {
+	width: 100%;
+	border-top: 1px solid #C4C4C4;
+	margin: 20px 0;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.clickable {
+	cursor: pointer;
+}
+.table {
+	color:#25282D;
+	font-weight: normal;
+	width: 100%;
+	border-collapse: collapse;
+	line-height: 50px;
+}
+.table tr td:first-child {
+	padding-left: 25px;
+}
+.table tr td:last-child {
+	padding-right: 25px;
+}
+.table thead tr {
+	font-size: 12px;
+	font-weight: 600;
+}
+.table tbody {
+	border-top: 1px solid #C4C4C4;
+}
+.table tbody tr {
+	border-bottom: 1px solid #C4C4C4;
 }

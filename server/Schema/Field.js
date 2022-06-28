@@ -1,11 +1,22 @@
 import pool from "../config/database.js";
 
-const selectField = (request,response) => {
-  pool.query('SELECT * FROM Quadra;',(error, results) => {
-    if(error) 
+
+const selectAllFields = (request,response) => {
+  pool.query('Select * from Quadra',(error, results) => {
+    if(error)
       throw error;
     response.status(200).json(results.rows);
-  })  
+  })
+}
+
+const selectField = (request,response) => {
+  const data = request.query.data;
+  const horario = request.query.horario;
+  pool.query('SELECT q.id,q.modalidade,b.nome as nomeBloco FROM Quadra q JOIN Bloco b ON q.idBloco=b.id WHERE NOT EXISTS (SELECT * FROM Agendamento a WHERE a.data!=$1 and a.horario!=$2);',[data,horario],(error, results) => {
+    if(error)
+      throw error;
+    response.status(200).json(results.rows);
+  })
 };
 
 const selectFieldById = (request,response) => {
@@ -19,14 +30,14 @@ const selectFieldById = (request,response) => {
 };
 
 const insertField = (request,response) => {
-  const idBloco = request.body.nome;
+  const idBloco = request.body.idBloco;
   const modalidade = request.body.modalidade;
-
-  pool.query(`INSERT INTO Quadra values(default,$1,'$2')`,[idBloco,modalidade],(error,results) => {
+  console.log(modalidade);
+  pool.query(`INSERT INTO Quadra values(default,$1,$2)`,[idBloco,modalidade],(error,results) => {
     if(error){
       throw error;
     }
-    response.status(201).send('Quadra inserida com sucesso.')
+    response.status(201).send({'answer':'Success'});
   })
 };
 
@@ -35,7 +46,7 @@ const deleteField = (request,response) => {
 
   pool.query(`DELETE FROM Quadra where id = $1`,[id],(error,results) => {
     if(error) throw error;
-    response.status(201).send('Bloco removido com sucesso');
+    response.status(201).send({'answer':'Success'});
   })
 }
 
@@ -49,6 +60,7 @@ const updateField = (request,response) => {
 };
 
 export default {
+  selectAllFields,
   selectField,
   selectFieldById,
   insertField,
