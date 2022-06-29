@@ -102,7 +102,7 @@
       {:else if headerOption == 'myevents'}
           <MyEvents user = {user}/>
       {:else if headerOption == 'seeBooking'}
-          <SeeBooking/>
+          <SeeBooking user={user} />
       {:else if headerOption == 'seeEvents'}
           <SeeEvents/>
       {:else if headerOption == 'seeClients'}

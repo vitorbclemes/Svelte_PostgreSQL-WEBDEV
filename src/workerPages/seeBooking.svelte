@@ -10,9 +10,10 @@
 <script>
   import DataStorage from '../../utils/DataStorage.js';
   let bookingsPromise = DataStorage.get('appointments');
+  export let user;
 
   async function handleApproved(booking){
-    let res = await DataStorage.put(`appointments/${booking.id}`,{'status': booking.status == 'pending' ? 'approved' : 'pending','id':booking.id});
+    let res = await DataStorage.put(`appointments/${booking.id}`,{'status': booking.status == 'pending' ? 'approved' : 'pending','id':booking.id,'idFuncionario':user.id});
     if(res.answer == 'Success')
       bookingsPromise = DataStorage.get('appointments');
   }

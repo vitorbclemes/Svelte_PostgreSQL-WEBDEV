@@ -66,7 +66,6 @@
         <td>BLOCO</td>
         <td>RECORRÊNCIA</td>
         <td>STATUS</td>
-        <td>EVENTO</td>
         <td>EXCLUIR</td>
       </tr>
     </thead>
@@ -80,9 +79,6 @@
             <td>{booked.nome}</td>
             <td>{booked.recorrente == false ? 'Não' : 'Sim'}</td>
             <td>{booked.status == 'approved' ? 'Aprovado' : 'Pendente'}</td>
-            {#await eventsPromise then events}
-              <td>{events.find(event=>event.id == booked.idevento).nome || '-'}</td>
-            {/await}
             <td><button on:click={()=>deleteBooking(booked)}>EXCLUIR</button></td>
           </tr>
           {:else}
@@ -144,7 +140,7 @@
               {/await}
             </select>
           </label>
-          <button class="custom-button" style="margin-top: 30px;" type="submit">RESERVAS</button>
+          <button class="custom-button" style="margin-top: 30px;" type="submit">RESERVAR</button>
         </form>
       </div>
   </div>

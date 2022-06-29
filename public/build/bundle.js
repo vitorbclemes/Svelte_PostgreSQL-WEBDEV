@@ -1801,29 +1801,29 @@ var app = (function () {
 
     function get_each_context$7(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[18] = list[i];
+    	child_ctx[17] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[22] = list[i];
+    	child_ctx[21] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[26] = list[i];
+    	child_ctx[25] = list[i];
     	return child_ctx;
     }
 
     // (1:0) <style>   .booking{     position:relative;     margin-top: -50px;   }
-    function create_catch_block_3(ctx) {
+    function create_catch_block_2$1(ctx) {
     	const block = { c: noop, m: noop, p: noop, d: noop };
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_catch_block_3.name,
+    		id: create_catch_block_2$1.name,
     		type: "catch",
     		source: "(1:0) <style>   .booking{     position:relative;     margin-top: -50px;   }",
     		ctx
@@ -1832,10 +1832,10 @@ var app = (function () {
     	return block;
     }
 
-    // (74:43)          {#each booking as booked}
+    // (73:43)          {#each booking as booked}
     function create_then_block_2$1(ctx) {
     	let each_1_anchor;
-    	let each_value_2 = /*booking*/ ctx[25];
+    	let each_value_2 = /*booking*/ ctx[24];
     	validate_each_argument(each_value_2);
     	let each_blocks = [];
 
@@ -1873,8 +1873,8 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*deleteBooking, bookingsPromise, eventsPromise*/ 73) {
-    				each_value_2 = /*booking*/ ctx[25];
+    			if (dirty & /*deleteBooking, bookingsPromise*/ 65) {
+    				each_value_2 = /*booking*/ ctx[24];
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -1919,14 +1919,14 @@ var app = (function () {
     		block,
     		id: create_then_block_2$1.name,
     		type: "then",
-    		source: "(74:43)          {#each booking as booked}",
+    		source: "(73:43)          {#each booking as booked}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:10) {:else}
+    // (84:10) {:else}
     function create_else_block_1(ctx) {
     	let tr;
     	let td;
@@ -1940,8 +1940,8 @@ var app = (function () {
     			t1 = space();
     			attr_dev(td, "colspan", "8");
     			set_style(td, "text-align", "center");
-    			add_location(td, file$7, 89, 12, 2645);
-    			add_location(tr, file$7, 88, 10, 2628);
+    			add_location(td, file$7, 85, 12, 2468);
+    			add_location(tr, file$7, 84, 10, 2451);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -1958,136 +1958,52 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(88:10) {:else}",
+    		source: "(84:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1:0) <style>   .booking{     position:relative;     margin-top: -50px;   }
-    function create_catch_block_2$1(ctx) {
-    	const block = { c: noop, m: noop, p: noop, d: noop };
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_catch_block_2$1.name,
-    		type: "catch",
-    		source: "(1:0) <style>   .booking{     position:relative;     margin-top: -50px;   }",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (83:46)                <td>{events.find(event=>event.id == booked.idevento).nome || '-'}
-    function create_then_block_3(ctx) {
-    	let td;
-    	let t_value = (/*events*/ ctx[17].find(func).nome || '-') + "";
-    	let t;
-
-    	function func(...args) {
-    		return /*func*/ ctx[8](/*booked*/ ctx[26], ...args);
-    	}
-
-    	const block = {
-    		c: function create() {
-    			td = element("td");
-    			t = text(t_value);
-    			add_location(td, file$7, 83, 14, 2409);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, td, anchor);
-    			append_dev(td, t);
-    		},
-    		p: function update(new_ctx, dirty) {
-    			ctx = new_ctx;
-    			if (dirty & /*bookingsPromise*/ 1 && t_value !== (t_value = (/*events*/ ctx[17].find(func).nome || '-') + "")) set_data_dev(t, t_value);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(td);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_then_block_3.name,
-    		type: "then",
-    		source: "(83:46)                <td>{events.find(event=>event.id == booked.idevento).nome || '-'}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (1:0) <style>   .booking{     position:relative;     margin-top: -50px;   }
-    function create_pending_block_3(ctx) {
-    	const block = { c: noop, m: noop, p: noop, d: noop };
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_pending_block_3.name,
-    		type: "pending",
-    		source: "(1:0) <style>   .booking{     position:relative;     margin-top: -50px;   }",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (75:8) {#each booking as booked}
+    // (74:8) {#each booking as booked}
     function create_each_block_2(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*booked*/ ctx[26].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "";
+    	let t0_value = /*booked*/ ctx[25].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*booked*/ ctx[26].horario + "";
+    	let t2_value = /*booked*/ ctx[25].horario + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*booked*/ ctx[26].modalidade + "";
+    	let t4_value = /*booked*/ ctx[25].modalidade + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*booked*/ ctx[26].nome + "";
+    	let t6_value = /*booked*/ ctx[25].nome + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = (/*booked*/ ctx[26].recorrente == false ? 'Não' : 'Sim') + "";
+    	let t8_value = (/*booked*/ ctx[25].recorrente == false ? 'Não' : 'Sim') + "";
     	let t8;
     	let t9;
     	let td5;
 
-    	let t10_value = (/*booked*/ ctx[26].status == 'approved'
+    	let t10_value = (/*booked*/ ctx[25].status == 'approved'
     	? 'Aprovado'
     	: 'Pendente') + "";
 
     	let t10;
     	let t11;
-    	let t12;
     	let td6;
     	let button;
-    	let t14;
+    	let t13;
     	let mounted;
     	let dispose;
 
-    	let info = {
-    		ctx,
-    		current: null,
-    		token: null,
-    		hasCatch: false,
-    		pending: create_pending_block_3,
-    		then: create_then_block_3,
-    		catch: create_catch_block_2$1,
-    		value: 17
-    	};
-
-    	handle_promise(/*eventsPromise*/ ctx[3], info);
-
     	function click_handler() {
-    		return /*click_handler*/ ctx[9](/*booked*/ ctx[26]);
+    		return /*click_handler*/ ctx[8](/*booked*/ ctx[25]);
     	}
 
     	const block = {
@@ -2111,21 +2027,19 @@ var app = (function () {
     			td5 = element("td");
     			t10 = text(t10_value);
     			t11 = space();
-    			info.block.c();
-    			t12 = space();
     			td6 = element("td");
     			button = element("button");
     			button.textContent = "EXCLUIR";
-    			t14 = space();
-    			add_location(td0, file$7, 76, 12, 2022);
-    			add_location(td1, file$7, 77, 12, 2103);
-    			add_location(td2, file$7, 78, 12, 2141);
-    			add_location(td3, file$7, 79, 12, 2182);
-    			add_location(td4, file$7, 80, 12, 2217);
-    			add_location(td5, file$7, 81, 12, 2283);
-    			add_location(button, file$7, 85, 16, 2517);
-    			add_location(td6, file$7, 85, 12, 2513);
-    			add_location(tr, file$7, 75, 10, 2005);
+    			t13 = space();
+    			add_location(td0, file$7, 75, 12, 1998);
+    			add_location(td1, file$7, 76, 12, 2079);
+    			add_location(td2, file$7, 77, 12, 2117);
+    			add_location(td3, file$7, 78, 12, 2158);
+    			add_location(td4, file$7, 79, 12, 2193);
+    			add_location(td5, file$7, 80, 12, 2259);
+    			add_location(button, file$7, 81, 16, 2340);
+    			add_location(td6, file$7, 81, 12, 2336);
+    			add_location(tr, file$7, 74, 10, 1981);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -2147,13 +2061,9 @@ var app = (function () {
     			append_dev(tr, td5);
     			append_dev(td5, t10);
     			append_dev(tr, t11);
-    			info.block.m(tr, info.anchor = null);
-    			info.mount = () => tr;
-    			info.anchor = t12;
-    			append_dev(tr, t12);
     			append_dev(tr, td6);
     			append_dev(td6, button);
-    			append_dev(tr, t14);
+    			append_dev(tr, t13);
 
     			if (!mounted) {
     				dispose = listen_dev(button, "click", click_handler, false, false, false);
@@ -2162,23 +2072,18 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*bookingsPromise*/ 1 && t0_value !== (t0_value = /*booked*/ ctx[26].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t2_value !== (t2_value = /*booked*/ ctx[26].horario + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t4_value !== (t4_value = /*booked*/ ctx[26].modalidade + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t6_value !== (t6_value = /*booked*/ ctx[26].nome + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t8_value !== (t8_value = (/*booked*/ ctx[26].recorrente == false ? 'Não' : 'Sim') + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t0_value !== (t0_value = /*booked*/ ctx[25].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t2_value !== (t2_value = /*booked*/ ctx[25].horario + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t4_value !== (t4_value = /*booked*/ ctx[25].modalidade + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t6_value !== (t6_value = /*booked*/ ctx[25].nome + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t8_value !== (t8_value = (/*booked*/ ctx[25].recorrente == false ? 'Não' : 'Sim') + "")) set_data_dev(t8, t8_value);
 
-    			if (dirty & /*bookingsPromise*/ 1 && t10_value !== (t10_value = (/*booked*/ ctx[26].status == 'approved'
+    			if (dirty & /*bookingsPromise*/ 1 && t10_value !== (t10_value = (/*booked*/ ctx[25].status == 'approved'
     			? 'Aprovado'
     			: 'Pendente') + "")) set_data_dev(t10, t10_value);
-
-    			update_await_block_branch(info, ctx, dirty);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
-    			info.block.d();
-    			info.token = null;
-    			info = null;
     			mounted = false;
     			dispose();
     		}
@@ -2188,7 +2093,7 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(75:8) {#each booking as booked}",
+    		source: "(74:8) {#each booking as booked}",
     		ctx
     	});
 
@@ -2210,7 +2115,7 @@ var app = (function () {
     	return block;
     }
 
-    // (99:0) {#if bookingStart == true}
+    // (95:0) {#if bookingStart == true}
     function create_if_block$4(ctx) {
     	let div5;
     	let div4;
@@ -2263,7 +2168,7 @@ var app = (function () {
     		pending: create_pending_block_1$1,
     		then: create_then_block_1$1,
     		catch: create_catch_block_1$1,
-    		value: 21
+    		value: 20
     	};
 
     	handle_promise(/*fieldsPromise*/ ctx[4], info);
@@ -2276,7 +2181,7 @@ var app = (function () {
     		pending: create_pending_block$6,
     		then: create_then_block$6,
     		catch: create_catch_block$6,
-    		value: 17
+    		value: 16
     	};
 
     	handle_promise(/*eventsPromise*/ ctx[3], info_1);
@@ -2334,80 +2239,80 @@ var app = (function () {
     			info_1.block.c();
     			t21 = space();
     			button = element("button");
-    			button.textContent = "RESERVAS";
+    			button.textContent = "RESERVAR";
     			set_style(span, "color", "var(--main-color)");
     			set_style(span, "font-weight", "bold");
     			set_style(span, "font-size", "18px");
-    			add_location(span, file$7, 102, 28, 3147);
+    			add_location(span, file$7, 98, 28, 2970);
     			attr_dev(div0, "class", "left");
-    			add_location(div0, file$7, 102, 10, 3129);
+    			add_location(div0, file$7, 98, 10, 2952);
     			attr_dev(i, "class", "material-icons right clickable");
-    			add_location(i, file$7, 103, 10, 3249);
+    			add_location(i, file$7, 99, 10, 3072);
     			attr_dev(div1, "class", "dialog-section");
-    			add_location(div1, file$7, 101, 6, 3090);
+    			add_location(div1, file$7, 97, 6, 2913);
     			attr_dev(div2, "class", "hr");
-    			add_location(div2, file$7, 105, 6, 3366);
-    			add_location(h10, file$7, 109, 12, 3646);
+    			add_location(div2, file$7, 101, 6, 3189);
+    			add_location(h10, file$7, 105, 12, 3469);
     			attr_dev(input0, "type", "date");
     			attr_dev(input0, "placeholder", "000.000.000-00");
     			input0.required = true;
-    			add_location(input0, file$7, 110, 12, 3672);
+    			add_location(input0, file$7, 106, 12, 3495);
     			attr_dev(label0, "class", "finput");
     			set_style(label0, "width", "350px");
-    			add_location(label0, file$7, 108, 10, 3591);
-    			add_location(h11, file$7, 113, 12, 3845);
+    			add_location(label0, file$7, 104, 10, 3414);
+    			add_location(h11, file$7, 109, 12, 3668);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "HH:MM:SS  ");
     			input1.required = true;
-    			add_location(input1, file$7, 114, 12, 3874);
+    			add_location(input1, file$7, 110, 12, 3697);
     			attr_dev(label1, "class", "finput");
     			set_style(label1, "width", "350px");
-    			add_location(label1, file$7, 112, 10, 3790);
-    			add_location(h12, file$7, 117, 12, 4046);
+    			add_location(label1, file$7, 108, 10, 3613);
+    			add_location(h12, file$7, 113, 12, 3869);
     			select0.required = true;
-    			if (/*newBooking*/ ctx[1].idQuadra === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[14].call(select0));
-    			add_location(select0, file$7, 118, 12, 4075);
+    			if (/*newBooking*/ ctx[1].idQuadra === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[13].call(select0));
+    			add_location(select0, file$7, 114, 12, 3898);
     			attr_dev(label2, "class", "finput");
     			set_style(label2, "width", "350px");
-    			add_location(label2, file$7, 116, 10, 3991);
-    			add_location(h13, file$7, 129, 12, 4539);
+    			add_location(label2, file$7, 112, 10, 3814);
+    			add_location(h13, file$7, 125, 12, 4362);
     			option0.__value = true;
     			option0.value = option0.__value;
-    			add_location(option0, file$7, 131, 18, 4642);
+    			add_location(option0, file$7, 127, 18, 4465);
     			option1.__value = false;
     			option1.value = option1.__value;
-    			add_location(option1, file$7, 132, 18, 4694);
+    			add_location(option1, file$7, 128, 18, 4517);
     			select1.required = true;
-    			if (/*newBooking*/ ctx[1].recorrente === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[15].call(select1));
-    			add_location(select1, file$7, 130, 12, 4571);
+    			if (/*newBooking*/ ctx[1].recorrente === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[14].call(select1));
+    			add_location(select1, file$7, 126, 12, 4394);
     			attr_dev(label3, "class", "finput");
     			set_style(label3, "width", "350px");
-    			add_location(label3, file$7, 128, 10, 4484);
-    			add_location(h14, file$7, 136, 12, 4835);
+    			add_location(label3, file$7, 124, 10, 4307);
+    			add_location(h14, file$7, 132, 12, 4658);
     			select2.required = true;
-    			if (/*newBooking*/ ctx[1].idEvento === void 0) add_render_callback(() => /*select2_change_handler*/ ctx[16].call(select2));
-    			add_location(select2, file$7, 137, 12, 4863);
+    			if (/*newBooking*/ ctx[1].idEvento === void 0) add_render_callback(() => /*select2_change_handler*/ ctx[15].call(select2));
+    			add_location(select2, file$7, 133, 12, 4686);
     			attr_dev(label4, "class", "finput");
     			set_style(label4, "width", "350px");
-    			add_location(label4, file$7, 135, 10, 4780);
+    			add_location(label4, file$7, 131, 10, 4603);
     			attr_dev(button, "class", "custom-button");
     			set_style(button, "margin-top", "30px");
     			attr_dev(button, "type", "submit");
-    			add_location(button, file$7, 146, 10, 5219);
+    			add_location(button, file$7, 142, 10, 5042);
     			attr_dev(form, "class", "field-form flex-column");
-    			add_location(form, file$7, 107, 8, 3502);
+    			add_location(form, file$7, 103, 8, 3325);
     			attr_dev(div3, "class", "flex-column");
     			set_style(div3, "justify-content", "center");
     			set_style(div3, "align-items", "center");
     			set_style(div3, "padding", "60px 0 80px 0");
-    			add_location(div3, file$7, 106, 6, 3395);
+    			add_location(div3, file$7, 102, 6, 3218);
     			attr_dev(div4, "class", "dialog-container");
     			set_style(div4, "min-width", "1200px");
-    			add_location(div4, file$7, 100, 2, 3026);
+    			add_location(div4, file$7, 96, 2, 2849);
     			attr_dev(div5, "id", "login");
     			attr_dev(div5, "class", "fullscreen-faded");
     			set_style(div5, "z-index", "2 ");
-    			add_location(div5, file$7, 99, 0, 2962);
+    			add_location(div5, file$7, 95, 0, 2785);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div5, anchor);
@@ -2464,12 +2369,12 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(i, "click", /*click_handler_2*/ ctx[11], false, false, false),
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[13]),
-    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[14]),
-    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[15]),
-    					listen_dev(select2, "change", /*select2_change_handler*/ ctx[16]),
+    					listen_dev(i, "click", /*click_handler_2*/ ctx[10], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[11]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[12]),
+    					listen_dev(select0, "change", /*select0_change_handler*/ ctx[13]),
+    					listen_dev(select1, "change", /*select1_change_handler*/ ctx[14]),
+    					listen_dev(select2, "change", /*select2_change_handler*/ ctx[15]),
     					listen_dev(form, "submit", prevent_default(/*handleBooking*/ ctx[5]), false, true, false)
     				];
 
@@ -2520,7 +2425,7 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(99:0) {#if bookingStart == true}",
+    		source: "(95:0) {#if bookingStart == true}",
     		ctx
     	});
 
@@ -2542,10 +2447,10 @@ var app = (function () {
     	return block;
     }
 
-    // (120:49)                  {#each fields as field }
+    // (116:49)                  {#each fields as field }
     function create_then_block_1$1(ctx) {
     	let each_1_anchor;
-    	let each_value_1 = /*fields*/ ctx[21];
+    	let each_value_1 = /*fields*/ ctx[20];
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -2584,7 +2489,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*fieldsPromise*/ 16) {
-    				each_value_1 = /*fields*/ ctx[21];
+    				each_value_1 = /*fields*/ ctx[20];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -2629,14 +2534,14 @@ var app = (function () {
     		block,
     		id: create_then_block_1$1.name,
     		type: "then",
-    		source: "(120:49)                  {#each fields as field }",
+    		source: "(116:49)                  {#each fields as field }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (123:16) {:else}
+    // (119:16) {:else}
     function create_else_block$7(ctx) {
     	let t;
 
@@ -2656,26 +2561,26 @@ var app = (function () {
     		block,
     		id: create_else_block$7.name,
     		type: "else",
-    		source: "(123:16) {:else}",
+    		source: "(119:16) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:16) {#each fields as field }
+    // (117:16) {#each fields as field }
     function create_each_block_1$1(ctx) {
     	let option;
-    	let t_value = "[" + /*field*/ ctx[22].modalidade + "], " + /*field*/ ctx[22].nomebloco + "";
+    	let t_value = "[" + /*field*/ ctx[21].modalidade + "], " + /*field*/ ctx[21].nomebloco + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = /*field*/ ctx[22].id;
+    			option.__value = /*field*/ ctx[21].id;
     			option.value = option.__value;
-    			add_location(option, file$7, 121, 18, 4235);
+    			add_location(option, file$7, 117, 18, 4058);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2691,7 +2596,7 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(121:16) {#each fields as field }",
+    		source: "(117:16) {#each fields as field }",
     		ctx
     	});
 
@@ -2728,11 +2633,11 @@ var app = (function () {
     	return block;
     }
 
-    // (139:49)                <option value={null}
+    // (135:49)                <option value={null}
     function create_then_block$6(ctx) {
     	let option;
     	let each_1_anchor;
-    	let each_value = /*events*/ ctx[17];
+    	let each_value = /*events*/ ctx[16];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -2752,7 +2657,7 @@ var app = (function () {
     			each_1_anchor = empty();
     			option.__value = null;
     			option.value = option.__value;
-    			add_location(option, file$7, 139, 14, 4978);
+    			add_location(option, file$7, 135, 14, 4801);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2765,7 +2670,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*eventsPromise*/ 8) {
-    				each_value = /*events*/ ctx[17];
+    				each_value = /*events*/ ctx[16];
     				validate_each_argument(each_value);
     				let i;
 
@@ -2799,26 +2704,26 @@ var app = (function () {
     		block,
     		id: create_then_block$6.name,
     		type: "then",
-    		source: "(139:49)                <option value={null}",
+    		source: "(135:49)                <option value={null}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (141:16) {#each events as event }
+    // (137:16) {#each events as event }
     function create_each_block$7(ctx) {
     	let option;
-    	let t_value = /*event*/ ctx[18].nome + "";
+    	let t_value = /*event*/ ctx[17].nome + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = /*event*/ ctx[18].id;
+    			option.__value = /*event*/ ctx[17].id;
     			option.value = option.__value;
-    			add_location(option, file$7, 141, 18, 5074);
+    			add_location(option, file$7, 137, 18, 4897);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -2834,7 +2739,7 @@ var app = (function () {
     		block,
     		id: create_each_block$7.name,
     		type: "each",
-    		source: "(141:16) {#each events as event }",
+    		source: "(137:16) {#each events as event }",
     		ctx
     	});
 
@@ -2877,13 +2782,11 @@ var app = (function () {
     	let t13;
     	let td6;
     	let t15;
-    	let td7;
-    	let t17;
     	let tbody;
     	let promise;
-    	let t18;
+    	let t16;
     	let button;
-    	let t20;
+    	let t18;
     	let if_block_anchor;
     	let mounted;
     	let dispose;
@@ -2895,8 +2798,8 @@ var app = (function () {
     		hasCatch: false,
     		pending: create_pending_block_2$1,
     		then: create_then_block_2$1,
-    		catch: create_catch_block_3,
-    		value: 25
+    		catch: create_catch_block_2$1,
+    		value: 24
     	};
 
     	handle_promise(promise = /*bookingsPromise*/ ctx[0], info);
@@ -2930,17 +2833,14 @@ var app = (function () {
     			td5.textContent = "STATUS";
     			t13 = space();
     			td6 = element("td");
-    			td6.textContent = "EVENTO";
+    			td6.textContent = "EXCLUIR";
     			t15 = space();
-    			td7 = element("td");
-    			td7.textContent = "EXCLUIR";
-    			t17 = space();
     			tbody = element("tbody");
     			info.block.c();
-    			t18 = space();
+    			t16 = space();
     			button = element("button");
     			button.textContent = "Nova Reserva";
-    			t20 = space();
+    			t18 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			attr_dev(h2, "class", "title svelte-1bjxly0");
@@ -2953,16 +2853,15 @@ var app = (function () {
     			add_location(td4, file$7, 66, 8, 1786);
     			add_location(td5, file$7, 67, 8, 1815);
     			add_location(td6, file$7, 68, 8, 1839);
-    			add_location(td7, file$7, 69, 8, 1863);
     			add_location(tr, file$7, 61, 6, 1674);
     			add_location(thead, file$7, 60, 4, 1660);
-    			add_location(tbody, file$7, 72, 4, 1909);
+    			add_location(tbody, file$7, 71, 4, 1885);
     			attr_dev(table, "class", "table");
     			add_location(table, file$7, 59, 2, 1634);
     			attr_dev(button, "class", "custom-button");
     			set_style(button, "margin-left", "450px");
     			set_style(button, "margin-top", "30px");
-    			add_location(button, file$7, 95, 2, 2798);
+    			add_location(button, file$7, 91, 2, 2621);
     			attr_dev(div, "class", "booking svelte-1bjxly0");
     			add_location(div, file$7, 57, 0, 1541);
     		},
@@ -2989,21 +2888,19 @@ var app = (function () {
     			append_dev(tr, td5);
     			append_dev(tr, t13);
     			append_dev(tr, td6);
-    			append_dev(tr, t15);
-    			append_dev(tr, td7);
-    			append_dev(table, t17);
+    			append_dev(table, t15);
     			append_dev(table, tbody);
     			info.block.m(tbody, info.anchor = null);
     			info.mount = () => tbody;
     			info.anchor = null;
-    			append_dev(div, t18);
+    			append_dev(div, t16);
     			append_dev(div, button);
-    			insert_dev(target, t20, anchor);
+    			insert_dev(target, t18, anchor);
     			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, if_block_anchor, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[10], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler_1*/ ctx[9], false, false, false);
     				mounted = true;
     			}
     		},
@@ -3035,7 +2932,7 @@ var app = (function () {
     			info.block.d();
     			info.token = null;
     			info = null;
-    			if (detaching) detach_dev(t20);
+    			if (detaching) detach_dev(t18);
     			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(if_block_anchor);
     			mounted = false;
@@ -3114,7 +3011,6 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Booking> was created with unknown prop '${key}'`);
     	});
 
-    	const func = (booked, event) => event.id == booked.idevento;
     	const click_handler = booked => deleteBooking(booked);
     	const click_handler_1 = () => $$invalidate(2, bookingStart = true);
     	const click_handler_2 = () => $$invalidate(2, bookingStart = false);
@@ -3187,7 +3083,6 @@ var app = (function () {
     		handleBooking,
     		deleteBooking,
     		user,
-    		func,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
@@ -3869,7 +3764,7 @@ var app = (function () {
 
     function get_each_context$5(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
+    	child_ctx[5] = list[i];
     	return child_ctx;
     }
 
@@ -3888,10 +3783,10 @@ var app = (function () {
     	return block;
     }
 
-    // (37:43)          {#each booking as booked}
+    // (38:43)          {#each booking as booked}
     function create_then_block$4(ctx) {
     	let each_1_anchor;
-    	let each_value = /*booking*/ ctx[3];
+    	let each_value = /*booking*/ ctx[4];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -3930,7 +3825,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*handleApproved, bookingsPromise*/ 3) {
-    				each_value = /*booking*/ ctx[3];
+    				each_value = /*booking*/ ctx[4];
     				validate_each_argument(each_value);
     				let i;
 
@@ -3975,14 +3870,14 @@ var app = (function () {
     		block,
     		id: create_then_block$4.name,
     		type: "then",
-    		source: "(37:43)          {#each booking as booked}",
+    		source: "(38:43)          {#each booking as booked}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:10) {:else}
+    // (49:10) {:else}
     function create_else_block$5(ctx) {
     	let tr;
     	let td;
@@ -3996,8 +3891,8 @@ var app = (function () {
     			t1 = space();
     			attr_dev(td, "colspan", "7");
     			set_style(td, "text-align", "center");
-    			add_location(td, file$5, 49, 12, 1530);
-    			add_location(tr, file$5, 48, 10, 1513);
+    			add_location(td, file$5, 50, 12, 1573);
+    			add_location(tr, file$5, 49, 10, 1556);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -4014,39 +3909,39 @@ var app = (function () {
     		block,
     		id: create_else_block$5.name,
     		type: "else",
-    		source: "(48:10) {:else}",
+    		source: "(49:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:8) {#each booking as booked}
+    // (39:8) {#each booking as booked}
     function create_each_block$5(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*booked*/ ctx[4].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "";
+    	let t0_value = /*booked*/ ctx[5].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*booked*/ ctx[4].horario + "";
+    	let t2_value = /*booked*/ ctx[5].horario + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*booked*/ ctx[4].modalidade + "";
+    	let t4_value = /*booked*/ ctx[5].modalidade + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*booked*/ ctx[4].nome + "";
+    	let t6_value = /*booked*/ ctx[5].nome + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = (/*booked*/ ctx[4].recorrente == false ? 'Não' : 'Sim') + "";
+    	let t8_value = (/*booked*/ ctx[5].recorrente == false ? 'Não' : 'Sim') + "";
     	let t8;
     	let t9;
     	let td5;
 
-    	let t10_value = (/*booked*/ ctx[4].status == 'approved'
+    	let t10_value = (/*booked*/ ctx[5].status == 'approved'
     	? 'Aprovado'
     	: 'Pendente') + "";
 
@@ -4055,7 +3950,7 @@ var app = (function () {
     	let td6;
     	let button;
 
-    	let t12_value = (/*booked*/ ctx[4].status == 'approved'
+    	let t12_value = (/*booked*/ ctx[5].status == 'approved'
     	? 'Desaprovar'
     	: 'Aprovar') + "";
 
@@ -4065,7 +3960,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[2](/*booked*/ ctx[4]);
+    		return /*click_handler*/ ctx[3](/*booked*/ ctx[5]);
     	}
 
     	const block = {
@@ -4093,15 +3988,15 @@ var app = (function () {
     			button = element("button");
     			t12 = text(t12_value);
     			t13 = space();
-    			add_location(td0, file$5, 39, 12, 1010);
-    			add_location(td1, file$5, 40, 12, 1091);
-    			add_location(td2, file$5, 41, 12, 1129);
-    			add_location(td3, file$5, 42, 12, 1170);
-    			add_location(td4, file$5, 43, 12, 1205);
-    			add_location(td5, file$5, 44, 12, 1271);
-    			add_location(button, file$5, 45, 16, 1352);
-    			add_location(td6, file$5, 45, 12, 1348);
-    			add_location(tr, file$5, 38, 10, 993);
+    			add_location(td0, file$5, 40, 12, 1053);
+    			add_location(td1, file$5, 41, 12, 1134);
+    			add_location(td2, file$5, 42, 12, 1172);
+    			add_location(td3, file$5, 43, 12, 1213);
+    			add_location(td4, file$5, 44, 12, 1248);
+    			add_location(td5, file$5, 45, 12, 1314);
+    			add_location(button, file$5, 46, 16, 1395);
+    			add_location(td6, file$5, 46, 12, 1391);
+    			add_location(tr, file$5, 39, 10, 1036);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -4135,17 +4030,17 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*bookingsPromise*/ 1 && t0_value !== (t0_value = /*booked*/ ctx[4].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t2_value !== (t2_value = /*booked*/ ctx[4].horario + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t4_value !== (t4_value = /*booked*/ ctx[4].modalidade + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t6_value !== (t6_value = /*booked*/ ctx[4].nome + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*bookingsPromise*/ 1 && t8_value !== (t8_value = (/*booked*/ ctx[4].recorrente == false ? 'Não' : 'Sim') + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t0_value !== (t0_value = /*booked*/ ctx[5].data.replace('T', ' ').replace('Z', '').substr(0, 10) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t2_value !== (t2_value = /*booked*/ ctx[5].horario + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t4_value !== (t4_value = /*booked*/ ctx[5].modalidade + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t6_value !== (t6_value = /*booked*/ ctx[5].nome + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*bookingsPromise*/ 1 && t8_value !== (t8_value = (/*booked*/ ctx[5].recorrente == false ? 'Não' : 'Sim') + "")) set_data_dev(t8, t8_value);
 
-    			if (dirty & /*bookingsPromise*/ 1 && t10_value !== (t10_value = (/*booked*/ ctx[4].status == 'approved'
+    			if (dirty & /*bookingsPromise*/ 1 && t10_value !== (t10_value = (/*booked*/ ctx[5].status == 'approved'
     			? 'Aprovado'
     			: 'Pendente') + "")) set_data_dev(t10, t10_value);
 
-    			if (dirty & /*bookingsPromise*/ 1 && t12_value !== (t12_value = (/*booked*/ ctx[4].status == 'approved'
+    			if (dirty & /*bookingsPromise*/ 1 && t12_value !== (t12_value = (/*booked*/ ctx[5].status == 'approved'
     			? 'Desaprovar'
     			: 'Aprovar') + "")) set_data_dev(t12, t12_value);
     		},
@@ -4160,7 +4055,7 @@ var app = (function () {
     		block,
     		id: create_each_block$5.name,
     		type: "each",
-    		source: "(38:8) {#each booking as booked}",
+    		source: "(39:8) {#each booking as booked}",
     		ctx
     	});
 
@@ -4214,7 +4109,7 @@ var app = (function () {
     		pending: create_pending_block$4,
     		then: create_then_block$4,
     		catch: create_catch_block$4,
-    		value: 3
+    		value: 4
     	};
 
     	handle_promise(promise = /*bookingsPromise*/ ctx[0], info);
@@ -4253,21 +4148,21 @@ var app = (function () {
     			info.block.c();
     			attr_dev(h2, "class", "title svelte-1bjxly0");
     			set_style(h2, "text-align", "center");
-    			add_location(h2, file$5, 22, 2, 573);
-    			add_location(td0, file$5, 26, 8, 697);
-    			add_location(td1, file$5, 27, 8, 719);
-    			add_location(td2, file$5, 28, 8, 744);
-    			add_location(td3, file$5, 29, 8, 773);
-    			add_location(td4, file$5, 30, 8, 796);
-    			add_location(td5, file$5, 31, 8, 825);
-    			add_location(td6, file$5, 32, 8, 849);
-    			add_location(tr, file$5, 25, 6, 684);
-    			add_location(thead, file$5, 24, 4, 670);
-    			add_location(tbody, file$5, 35, 4, 897);
+    			add_location(h2, file$5, 23, 2, 616);
+    			add_location(td0, file$5, 27, 8, 740);
+    			add_location(td1, file$5, 28, 8, 762);
+    			add_location(td2, file$5, 29, 8, 787);
+    			add_location(td3, file$5, 30, 8, 816);
+    			add_location(td4, file$5, 31, 8, 839);
+    			add_location(td5, file$5, 32, 8, 868);
+    			add_location(td6, file$5, 33, 8, 892);
+    			add_location(tr, file$5, 26, 6, 727);
+    			add_location(thead, file$5, 25, 4, 713);
+    			add_location(tbody, file$5, 36, 4, 940);
     			attr_dev(table, "class", "table");
-    			add_location(table, file$5, 23, 2, 644);
+    			add_location(table, file$5, 24, 2, 687);
     			attr_dev(div, "class", "booking flex-column svelte-1bjxly0");
-    			add_location(div, file$5, 21, 0, 537);
+    			add_location(div, file$5, 22, 0, 580);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4331,17 +4226,19 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('SeeBooking', slots, []);
     	let bookingsPromise = DataStorage.get('appointments');
+    	let { user } = $$props;
 
     	async function handleApproved(booking) {
     		let res = await DataStorage.put(`appointments/${booking.id}`, {
     			'status': booking.status == 'pending' ? 'approved' : 'pending',
-    			'id': booking.id
+    			'id': booking.id,
+    			'idFuncionario': user.id
     		});
 
     		if (res.answer == 'Success') $$invalidate(0, bookingsPromise = DataStorage.get('appointments'));
     	}
 
-    	const writable_props = [];
+    	const writable_props = ['user'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<SeeBooking> was created with unknown prop '${key}'`);
@@ -4349,27 +4246,33 @@ var app = (function () {
 
     	const click_handler = booked => handleApproved(booked);
 
+    	$$self.$$set = $$props => {
+    		if ('user' in $$props) $$invalidate(2, user = $$props.user);
+    	};
+
     	$$self.$capture_state = () => ({
     		DataStorage,
     		bookingsPromise,
+    		user,
     		handleApproved
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('bookingsPromise' in $$props) $$invalidate(0, bookingsPromise = $$props.bookingsPromise);
+    		if ('user' in $$props) $$invalidate(2, user = $$props.user);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [bookingsPromise, handleApproved, click_handler];
+    	return [bookingsPromise, handleApproved, user, click_handler];
     }
 
     class SeeBooking extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {});
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { user: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -4377,6 +4280,21 @@ var app = (function () {
     			options,
     			id: create_fragment$5.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*user*/ ctx[2] === undefined && !('user' in props)) {
+    			console.warn("<SeeBooking> was created without expected prop 'user'");
+    		}
+    	}
+
+    	get user() {
+    		throw new Error("<SeeBooking>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set user(value) {
+    		throw new Error("<SeeBooking>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -5564,10 +5482,10 @@ var app = (function () {
     			set_style(label2, "width", "350px");
     			add_location(label2, file$2, 92, 10, 2862);
     			add_location(h13, file$2, 97, 12, 3115);
-    			option0.__value = 'servidor';
+    			option0.__value = 'Servidor';
     			option0.value = option0.__value;
     			add_location(option0, file$2, 99, 16, 3205);
-    			option1.__value = 'bolsista';
+    			option1.__value = 'Bolsista';
     			option1.value = option1.__value;
     			add_location(option1, file$2, 100, 16, 3266);
     			option2.__value = 'admin';
@@ -7084,7 +7002,11 @@ var app = (function () {
     function create_if_block_7(ctx) {
     	let seebooking;
     	let current;
-    	seebooking = new SeeBooking({ $$inline: true });
+
+    	seebooking = new SeeBooking({
+    			props: { user: /*user*/ ctx[5] },
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
@@ -7094,7 +7016,11 @@ var app = (function () {
     			mount_component(seebooking, target, anchor);
     			current = true;
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			const seebooking_changes = {};
+    			if (dirty & /*user*/ 32) seebooking_changes.user = /*user*/ ctx[5];
+    			seebooking.$set(seebooking_changes);
+    		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(seebooking.$$.fragment, local);
@@ -7358,11 +7284,11 @@ var app = (function () {
     			if_block.c();
     			attr_dev(div0, "class", "dialog-container");
     			set_style(div0, "min-width", "1200px");
-    			add_location(div0, file, 119, 2, 3334);
+    			add_location(div0, file, 119, 2, 3347);
     			attr_dev(div1, "id", "login");
     			attr_dev(div1, "class", "fullscreen-faded");
     			set_style(div1, "z-index", "2 ");
-    			add_location(div1, file, 118, 0, 3270);
+    			add_location(div1, file, 118, 0, 3283);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7479,49 +7405,49 @@ var app = (function () {
     			set_style(span, "color", "var(--main-color)");
     			set_style(span, "font-weight", "bold");
     			set_style(span, "font-size", "18px");
-    			add_location(span, file, 157, 30, 5309);
+    			add_location(span, file, 157, 30, 5322);
     			attr_dev(div0, "class", "left");
-    			add_location(div0, file, 157, 12, 5291);
+    			add_location(div0, file, 157, 12, 5304);
     			attr_dev(i, "class", "material-icons right clickable");
-    			add_location(i, file, 158, 12, 5411);
+    			add_location(i, file, 158, 12, 5424);
     			attr_dev(div1, "class", "dialog-section");
-    			add_location(div1, file, 156, 10, 5250);
+    			add_location(div1, file, 156, 10, 5263);
     			attr_dev(div2, "class", "hr");
-    			add_location(div2, file, 160, 8, 5527);
-    			add_location(h10, file, 164, 14, 5813);
+    			add_location(div2, file, 160, 8, 5540);
+    			add_location(h10, file, 164, 14, 5826);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "000.000.000-00");
     			input0.required = true;
-    			add_location(input0, file, 165, 14, 5849);
+    			add_location(input0, file, 165, 14, 5862);
     			attr_dev(label0, "class", "finput");
     			set_style(label0, "width", "350px");
-    			add_location(label0, file, 163, 12, 5756);
-    			add_location(h11, file, 168, 14, 6022);
+    			add_location(label0, file, 163, 12, 5769);
+    			add_location(h11, file, 168, 14, 6035);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "placeholder", "******");
     			input1.required = true;
-    			add_location(input1, file, 169, 14, 6051);
+    			add_location(input1, file, 169, 14, 6064);
     			attr_dev(label1, "class", "finput");
     			set_style(label1, "width", "350px");
-    			add_location(label1, file, 167, 12, 5965);
-    			add_location(h12, file, 172, 14, 6225);
+    			add_location(label1, file, 167, 12, 5978);
+    			add_location(h12, file, 172, 14, 6238);
     			select.required = true;
     			if (/*login*/ ctx[3].type === void 0) add_render_callback(() => /*select_change_handler*/ ctx[24].call(select));
-    			add_location(select, file, 173, 14, 6253);
+    			add_location(select, file, 173, 14, 6266);
     			attr_dev(label2, "class", "finput");
     			set_style(label2, "width", "350px");
-    			add_location(label2, file, 171, 12, 6168);
+    			add_location(label2, file, 171, 12, 6181);
     			attr_dev(button, "class", "custom-button");
     			set_style(button, "margin-top", "30px");
     			attr_dev(button, "type", "submit");
-    			add_location(button, file, 179, 12, 6482);
+    			add_location(button, file, 179, 12, 6495);
     			attr_dev(form, "class", "field-form flex-column");
-    			add_location(form, file, 162, 10, 5667);
+    			add_location(form, file, 162, 10, 5680);
     			attr_dev(div3, "class", "flex-column");
     			set_style(div3, "justify-content", "center");
     			set_style(div3, "align-items", "center");
     			set_style(div3, "padding", "60px 0 80px 0");
-    			add_location(div3, file, 161, 8, 5558);
+    			add_location(div3, file, 161, 8, 5571);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7732,74 +7658,74 @@ var app = (function () {
     			set_style(span, "color", "var(--main-color)");
     			set_style(span, "font-weight", "bold");
     			set_style(span, "font-size", "18px");
-    			add_location(span, file, 122, 28, 3488);
+    			add_location(span, file, 122, 28, 3501);
     			attr_dev(div0, "class", "left");
-    			add_location(div0, file, 122, 10, 3470);
+    			add_location(div0, file, 122, 10, 3483);
     			attr_dev(i, "class", "material-icons right clickable");
-    			add_location(i, file, 123, 10, 3590);
+    			add_location(i, file, 123, 10, 3603);
     			attr_dev(div1, "class", "dialog-section");
-    			add_location(div1, file, 121, 6, 3431);
+    			add_location(div1, file, 121, 6, 3444);
     			attr_dev(div2, "class", "hr");
-    			add_location(div2, file, 125, 6, 3702);
-    			add_location(h10, file, 129, 12, 3981);
+    			add_location(div2, file, 125, 6, 3715);
+    			add_location(h10, file, 129, 12, 3994);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "000.000.000-00");
     			input0.required = true;
-    			add_location(input0, file, 130, 12, 4006);
+    			add_location(input0, file, 130, 12, 4019);
     			attr_dev(label0, "class", "finput");
     			set_style(label0, "width", "350px");
-    			add_location(label0, file, 128, 10, 3926);
-    			add_location(h11, file, 133, 12, 4175);
+    			add_location(label0, file, 128, 10, 3939);
+    			add_location(h11, file, 133, 12, 4188);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "placeholder", "******");
     			input1.required = true;
-    			add_location(input1, file, 134, 12, 4202);
+    			add_location(input1, file, 134, 12, 4215);
     			attr_dev(label1, "class", "finput");
     			set_style(label1, "width", "350px");
-    			add_location(label1, file, 132, 10, 4120);
-    			add_location(h12, file, 137, 12, 4369);
+    			add_location(label1, file, 132, 10, 4133);
+    			add_location(h12, file, 137, 12, 4382);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "placeholder", "João da Silva");
     			input2.required = true;
-    			add_location(input2, file, 138, 12, 4395);
+    			add_location(input2, file, 138, 12, 4408);
     			attr_dev(label2, "class", "finput");
     			set_style(label2, "width", "350px");
-    			add_location(label2, file, 136, 10, 4314);
-    			add_location(h13, file, 141, 12, 4564);
+    			add_location(label2, file, 136, 10, 4327);
+    			add_location(h13, file, 141, 12, 4577);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "placeholder", "18");
     			input3.required = true;
-    			add_location(input3, file, 142, 12, 4591);
+    			add_location(input3, file, 142, 12, 4604);
     			attr_dev(label3, "class", "finput");
     			set_style(label3, "width", "350px");
-    			add_location(label3, file, 140, 10, 4509);
-    			add_location(h14, file, 145, 12, 4750);
+    			add_location(label3, file, 140, 10, 4522);
+    			add_location(h14, file, 145, 12, 4763);
     			attr_dev(input4, "type", "text");
     			attr_dev(input4, "placeholder", "Estudante");
     			input4.required = true;
-    			add_location(input4, file, 146, 12, 4780);
+    			add_location(input4, file, 146, 12, 4793);
     			attr_dev(label4, "class", "finput");
     			set_style(label4, "width", "350px");
-    			add_location(label4, file, 144, 10, 4695);
-    			add_location(h15, file, 149, 12, 4949);
+    			add_location(label4, file, 144, 10, 4708);
+    			add_location(h15, file, 149, 12, 4962);
     			attr_dev(input5, "type", "text");
     			attr_dev(input5, "placeholder", "Rua Paulo Malchitzki,100");
     			input5.required = true;
-    			add_location(input5, file, 150, 12, 4979);
+    			add_location(input5, file, 150, 12, 4992);
     			attr_dev(label5, "class", "finput");
     			set_style(label5, "width", "350px");
-    			add_location(label5, file, 148, 10, 4894);
+    			add_location(label5, file, 148, 10, 4907);
     			attr_dev(button, "class", "custom-button");
     			set_style(button, "margin-top", "30px");
     			attr_dev(button, "type", "submit");
-    			add_location(button, file, 152, 10, 5108);
+    			add_location(button, file, 152, 10, 5121);
     			attr_dev(form, "class", "field-form flex-column");
-    			add_location(form, file, 127, 8, 3838);
+    			add_location(form, file, 127, 8, 3851);
     			attr_dev(div3, "class", "flex-column");
     			set_style(div3, "justify-content", "center");
     			set_style(div3, "align-items", "center");
     			set_style(div3, "padding", "60px 0 80px 0");
-    			add_location(div3, file, 126, 6, 3731);
+    			add_location(div3, file, 126, 6, 3744);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7924,7 +7850,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = /*option*/ ctx[25];
     			option.value = option.__value;
-    			add_location(option, file, 175, 18, 6360);
+    			add_location(option, file, 175, 18, 6373);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);

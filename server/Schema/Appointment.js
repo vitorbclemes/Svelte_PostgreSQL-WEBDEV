@@ -57,7 +57,8 @@ const deleteAppointment = (request,response) => {
 const updateAppointment = (request,response) => {
   const id =request.body.id;
   const status = request.body.status;
-  pool.query(`UPDATE Agendamento SET status=$1 WHERE id = $2`,[status,id],(error,results) => {
+  const idFuncionario = request.body.idFuncionario;
+  pool.query(`UPDATE Agendamento SET status=$1,idFuncionario=$3 WHERE id = $2`,[status,id,idFuncionario],(error,results) => {
     if(error) throw error
     response.status(201).send({'answer':'Success'});
   })

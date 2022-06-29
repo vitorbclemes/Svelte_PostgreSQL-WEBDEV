@@ -97,8 +97,8 @@
           <label class="finput" style="width:350px">
             <h1>CARGO</h1>
             <select required bind:value={newWorker.cargo}>
-                <option value={'servidor'}>SERVIDOR</option>
-                <option value={'bolsista'}>BOLSISTA</option>
+                <option value={'Servidor'}>SERVIDOR</option>
+                <option value={'Bolsista'}>BOLSISTA</option>
                 <option value={'admin'}>ADMINISTRADOR</option>
             </select>
           </label>
